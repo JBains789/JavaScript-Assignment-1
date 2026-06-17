@@ -18,8 +18,19 @@ function Validate(theForm) {
 	if (theForm.email.value =="")
 	 empty += "Email\n";
 
-	if (theForm.hobbies.value =="")
-	 empty += "Hobbies\n";
+	var hobbies = theForm.hobbies;
+	var hobbyChecked = false;
+
+	for (var i = 0; i < hobbies.length; i++) {
+  		if (hobbies[i].checked) {
+    	hobbyChecked = true;
+    	break;
+  	}
+	}
+
+	if (!hobbyChecked) {
+  		empty += "Hobbies\n";
+		}
 
 	if (theForm.age.value =="")
 	 empty += "Age\n";
